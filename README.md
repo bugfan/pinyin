@@ -15,7 +15,7 @@
 var py pinyin.Pinyin
 
 // 初始化，载入汉字拼音映射文件
-py.Init("data/pinyin_table.txt")
+py.Init("../github.com/huichen/pinyin/data/pinyin_table.txt")
 
 // 返回汉字的拼音
 // GetPinyin的第一个参数为单个汉字，第二个参数为是否返回带声调的拼音。
@@ -30,6 +30,11 @@ fmt.Println(py.GetNumericTone('中'))
 // 下面的输出分别为 "lǜ" 和 "lv"
 fmt.Println(py.GetPinyin('绿', true))
 fmt.Println(py.GetPinyin('绿', false))
+
+for _,v:=range `张信哲 我爱你`{
+		fmt.Printf(py.GetPinyin(v, false))		
+}
+//输出 zhangxinzhewoaini
 ```
 
 ## 注意
